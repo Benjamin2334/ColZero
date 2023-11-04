@@ -1,0 +1,29 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+ifstream fin("colzero.in");
+ofstream fout("colzero.out");
+int n, m, v[100][100], cnt=0, s=0;
+int main()
+{
+    fin>>n>>m;
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=m;j++){
+        fin>>v[i][j];
+        }
+    }
+    for(int j=1;j<=m;j++){
+             for(int i=1;i<=n;i++){
+                 if(v[i][j]==0){
+                    s++;
+                 }
+             }
+             if(s==n){
+                cnt++;
+             }
+             s=0;
+
+    }
+fout<<cnt;
+    return 0;
+}
